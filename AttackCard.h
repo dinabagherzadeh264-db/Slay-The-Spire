@@ -17,4 +17,16 @@ public:
 	void applyEffect(class Character* caster, class Character* target) override;
 };
 
+class FeedCard : public AttackCard {
+public:
+	FeedCard();
+	void applyEffect(class Character* caster, class Character* target) override;
+};
+
+class ImmolateCard : public AttackCard {
+public:
+	ImmolateCard();
+	void applyEffect(class Character* caster, class Character* target) override;
+};
+
 #endif
