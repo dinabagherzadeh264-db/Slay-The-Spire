@@ -9,7 +9,7 @@ AttackCard::~AttackCard() = default;
 
 void AttackCard::applyEffect(class Character* caster, class Character* target) {
 	//if (caster) {
-	//	 caster->decreaseEnergy(energy); 
+	//	 caster->decreaseEnergy(energyCost); 
 	//	cout << caster->getName() << " spent " << energyCost << " energy to play " << name << ".\n";
 	//}
 	//if (target) {
@@ -52,8 +52,7 @@ void FeedCard::applyEffect(class Character* caster, class Character* target) {
 
 //__________________________________ImmolateCard_____________________________________
 ImmolateCard::ImmolateCard(): AttackCard(CardType::Attack, "Immolate",
-	"Deal 21 damage to all enemies - Add 2 BURN into discard pile", 2, 21) {
-}
+	"Deal 21 damage to all enemies - Add 2 BURN into discard pile", 2, 21) {}
 
 void ImmolateCard::applyEffect(class Character* caster, class Character* target) {
 	AttackCard::applyEffect(caster, target);
@@ -66,4 +65,42 @@ void ImmolateCard::applyEffect(class Character* caster, class Character* target)
 	}
 }
 
+//__________________________________WhirlwindCard_____________________________________
+WhirlwindCard::WhirlwindCard() : AttackCard(CardType::Attack, "Whirlwind",
+	"Deal 5 damage to all enemies X times (X = your current energy)", 0, 5) {}
 
+void WhirlwindCard::applyEffect(class Character* caster, class Character* target) {
+	if (caster && target) {
+		int currentEnergy = 3;
+		//currentEnergy = caster->getEnergy(); 
+		int realDamage = 5;
+		// realDamage = target->claculate_total_damage(5);
+		cout << "Whirlwind card played! Expending ALL " << currentEnergy << " energy\n";
+		for (int i = 0; i < currentEnergy; i++) {
+			cout << " -> [Hit " << (i + 1) << "] Dealt " << realDamage << " real damage to target\n";
+		}
+		// caster->decreaseEnergy(currentEnergy);
+	}
+}
+
+//__________________________________Blood_for_BloodCard_____________________________________
+Blood_for_BloodCard::Blood_for_BloodCard() : AttackCard(CardType::Attack, "Blood for Blood",
+	"Deal 18 damage - Costs 1 less for each time you lose HP this combat", 4, 18) {
+} 
+
+void Blood_for_BloodCard::applyEffect(class Character* caster, class Character* target) {
+	if (caster && target) {
+		int baseCost = 4;
+		int timesDamaged = 2; 
+		// timesDamaged = caster->getTimesDamagedThisCombat();
+		int currentCost = baseCost - timesDamaged;
+		if (currentCost < 0)
+			currentCost = 0;
+		int realDamage = 18;
+		// realDamage = target->claculate_total_damage(18);
+		cout << "Card [Blood for Blood] played! Cost: " << currentCost <<
+			" energy (Base cost reduced because you took damage " << timesDamaged << 
+			" times) \n-> Dealt" << realDamage << " damage to enemy.\n";
+		// caster->decreaseEnergy(currentCost);
+	}
+}
