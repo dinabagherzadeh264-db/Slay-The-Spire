@@ -29,4 +29,15 @@ public:
 	void applyEffect(class Character* caster, class Character* target) override;
 };
 
+class WhirlwindCard : public AttackCard {
+public:
+	WhirlwindCard();
+	void applyEffect(class Character* caster, class Character* target) override;
+};
+
+class Blood_for_BloodCard : public AttackCard {
+	Blood_for_BloodCard();
+	void applyEffect(class Character* caster, class Character* target) override;
+};
+
 #endif
