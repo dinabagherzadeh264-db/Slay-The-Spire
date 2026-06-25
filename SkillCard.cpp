@@ -71,7 +71,6 @@ OfferingCard::OfferingCard():SkillCard(CardType::Skill, "Offering",
 
 void OfferingCard::applyEffect(class Character* caster, class Character* target) {
     SkillCard::applyEffect(caster, target); 
-
     if (caster) {
         cout << "Offering card played! A risky but powerful move...\n";
         // caster->decreaseHP(6);
@@ -98,5 +97,34 @@ void ImperviousCard::applyEffect(class Character* caster, class Character* targe
         cout << "Impervious card played! -> Gained " << realBlock << " block\n";
         // caster->exhaustCard(this);
         cout << " -> Impervious has been Exhausted and moved to the exhaust pile\n";
+    }
+}
+
+//____________________________________DualWieldCard____________________________________
+DualWieldCard::DualWieldCard(): SkillCard(CardType::Skill, "DualWield",
+    "Choose a card in hand - Add 2 copies into hand", 1, 0) {}
+
+void DualWieldCard::applyEffect(class Character* caster, class Character* target) {
+    SkillCard::applyEffect(caster, target); 
+    if (caster) {
+        cout << "DualWield card played!\n";
+        // Card* chosenCard = caster->chooseCardFromHand();
+        // caster->addCopiesToHand(chosenCard, 2);
+        cout << " -> Chose a card from your hand and added 2 copies of it into your hand!\n";
+    }
+}
+
+//____________________________________EntrenchCard_____________________________________
+EntrenchCard::EntrenchCard():SkillCard(CardType::Skill, "Entrench",
+    "Double your Block", 2, 0) {}
+
+void EntrenchCard::applyEffect(class Character* caster, class Character* target) {
+    SkillCard::applyEffect(caster, target);
+    if (caster) {
+        cout << "Entrench card played!\n";
+        int currentBlock = 0;
+        //currentBlock = caster->getBlock();
+        //caster->setBlock( currentBlock * 2 );
+        cout << " -> your Block was doubled\n";
     }
 }

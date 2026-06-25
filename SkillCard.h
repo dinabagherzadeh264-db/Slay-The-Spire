@@ -42,4 +42,14 @@ class ImperviousCard : public SkillCard {
     void applyEffect(class Character* caster, class Character* target) override;
 };
 
+class DualWieldCard : public SkillCard {
+    DualWieldCard();
+    void applyEffect(class Character* caster, class Character* target) override;
+};
+
+class EntrenchCard : public SkillCard {
+    EntrenchCard();
+    void applyEffect(class Character* caster, class Character* target) override;
+};
+
 #endif
