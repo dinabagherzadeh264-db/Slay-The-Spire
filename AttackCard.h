@@ -40,4 +40,14 @@ class Blood_for_BloodCard : public AttackCard {
 	void applyEffect(class Character* caster, class Character* target) override;
 };
 
+class BashCard : public AttackCard {
+	BashCard();
+	void applyEffect(class Character* caster, class Character* target) override;
+};
+
+class TwinStrikeCard : public AttackCard {
+	TwinStrikeCard();
+	void applyEffect(class Character* caster, class Character* target) override;
+};
+
 #endif

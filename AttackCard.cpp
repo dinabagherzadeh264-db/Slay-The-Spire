@@ -85,8 +85,7 @@ void WhirlwindCard::applyEffect(class Character* caster, class Character* target
 
 //__________________________________Blood_for_BloodCard_____________________________________
 Blood_for_BloodCard::Blood_for_BloodCard() : AttackCard(CardType::Attack, "Blood for Blood",
-	"Deal 18 damage - Costs 1 less for each time you lose HP this combat", 4, 18) {
-} 
+	"Deal 18 damage - Costs 1 less for each time you lose HP this combat", 4, 18) {} 
 
 void Blood_for_BloodCard::applyEffect(class Character* caster, class Character* target) {
 	if (caster && target) {
@@ -98,9 +97,39 @@ void Blood_for_BloodCard::applyEffect(class Character* caster, class Character* 
 			currentCost = 0;
 		int realDamage = 18;
 		// realDamage = target->claculate_total_damage(18);
-		cout << "Card [Blood for Blood] played! Cost: " << currentCost <<
+		cout << "Blood for Blood Card played! Cost: " << currentCost <<
 			" energy (Base cost reduced because you took damage " << timesDamaged << 
 			" times) \n-> Dealt" << realDamage << " damage to enemy.\n";
 		// caster->decreaseEnergy(currentCost);
+	}
+}
+
+//________________________________________BashCard__________________________________________
+BashCard::BashCard():AttackCard(CardType::Attack, "Bash",
+	"Deal 8 damage - Apply 2 Vulnerable", 2, 8) {}
+
+void BashCard::applyEffect(class Character* caster, class Character* target) {
+	AttackCard::applyEffect(caster, target);
+	if (caster && target) {
+		int realDamage = 8;
+		// realDamage = target->claculate_total_damage(8);
+		cout << "Bash card played! -> Dealt " << realDamage << " real damage\n";
+		// target->applyStatus("Vulnerable", 2); 
+		cout << "Applied 2 turns of Vulnerable to the target\n";
+	}
+}
+
+//_____________________________________TwinStrikeCard_______________________________________
+TwinStrikeCard::TwinStrikeCard():AttackCard(CardType::Attack, "TwinStrike",
+	"Deal 6 damage twice", 1, 6) {}
+
+void TwinStrikeCard::applyEffect(class Character* caster, class Character* target) {
+	AttackCard::applyEffect(caster, target);
+	if (caster && target) {
+		int realDamage = 6;
+		// realDamage = target->claculate_total_damage(6);
+		cout << "Twin Strike card played!\n";
+		for (int i = 0; i < 2; i++) 
+			cout << " -> [Hit " << (i + 1) << "] Dealt " << realDamage << " real damage to target\n";
 	}
 }
