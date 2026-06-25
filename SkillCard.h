@@ -17,4 +17,14 @@ public:
     int getBaseBlock() const;
 };
 
+class DefendCard : public SkillCard {
+    DefendCard();
+    void applyEffect(class Character* caster, class Character* target) override;
+};
+
+class ExhumeCard : public SkillCard {
+    ExhumeCard();
+    void applyEffect(class Character* caster, class Character* target) override;
+};
+
 #endif
