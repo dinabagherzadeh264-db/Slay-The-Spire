@@ -115,7 +115,7 @@ void DualWieldCard::applyEffect(class Character* caster, class Character* target
 }
 
 //____________________________________EntrenchCard_____________________________________
-EntrenchCard::EntrenchCard():SkillCard(CardType::Skill, "Entrench",
+EntrenchCard::EntrenchCard(): SkillCard(CardType::Skill, "Entrench",
     "Double your Block", 2, 0) {}
 
 void EntrenchCard::applyEffect(class Character* caster, class Character* target) {
@@ -126,5 +126,52 @@ void EntrenchCard::applyEffect(class Character* caster, class Character* target)
         //currentBlock = caster->getBlock();
         //caster->setBlock( currentBlock * 2 );
         cout << " -> your Block was doubled\n";
+    }
+}
+
+//___________________________________ShrugItOffCard____________________________________
+ShrugItOffCard::ShrugItOffCard(): SkillCard(CardType::Skill, "ShrugItOff",
+    "Draw 1 card - Gain 8 block", 1, 8) {}
+
+void ShrugItOffCard::applyEffect(class Character* caster, class Character* target) {
+    SkillCard::applyEffect(caster, target);
+    if (caster) {
+        cout << "ShrugItOff card played!\n";
+        // caster->drawCards(1);
+        cout << " -> Drew 1 cards into your hand\n";
+        int realBlock = 8;
+        // realBlock = caster->calculate_total_block(8); 
+        // caster->AddBlock(realBlock); 
+        cout << " -> Gained " << realBlock << " block\n";
+    }
+}
+
+//___________________________________BloodlettingCard__________________________________
+BloodlettingCard::BloodlettingCard(): SkillCard(CardType::Skill, "Bloodletting",
+    "Lose 3 HP - Gain 2 Energy", 0, 0) {}
+
+void BloodlettingCard::applyEffect(class Character* caster, class Character* target) {
+    SkillCard::applyEffect(caster, target);
+    if (caster) {
+        cout << "Bloodletting card played!\n";
+        // caster->decreaseHP(3);
+        cout << " -> You lost 3 HP\n";
+        // caster->increaseEnergy(2);
+        cout << " -> Gained 2 Energy\n";
+    }
+}
+
+//_____________________________________DisarmCard______________________________________
+DisarmCard::DisarmCard(): SkillCard(CardType::Skill, "Disarm",
+    "Enemy loses 2 Strength - Exhaust", 1, 0) {}
+
+void DisarmCard::applyEffect(class Character* caster, class Character* target) {
+    SkillCard::applyEffect(caster, target);
+    if (caster) {
+        cout << "Disarm card played!\n";
+        //target->applyStatus("Strength", -2); 
+        cout << " -> Enemy lost 2 strength\n";
+        // caster->exhaustCard(this);
+        cout << " -> Disarm has been Exhausted and moved to the exhaust pile\n";
     }
 }

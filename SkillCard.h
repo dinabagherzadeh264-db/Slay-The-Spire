@@ -52,4 +52,19 @@ class EntrenchCard : public SkillCard {
     void applyEffect(class Character* caster, class Character* target) override;
 };
 
+class ShrugItOffCard : public SkillCard {
+    ShrugItOffCard();
+    void applyEffect(class Character* caster, class Character* target) override;
+};
+
+class BloodlettingCard : public SkillCard {
+    BloodlettingCard();
+    void applyEffect(class Character* caster, class Character* target) override;
+};
+
+class DisarmCard : public SkillCard {
+    DisarmCard();
+    void applyEffect(class Character* caster, class Character* target) override;
+};
+
 #endif
