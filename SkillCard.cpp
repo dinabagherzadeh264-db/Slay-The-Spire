@@ -47,3 +47,56 @@ void ExhumeCard::applyEffect(class Character* caster, class Character* target) {
         cout << " -> Exhume has been Exhausted and moved to the exhaust pile\n";
     }
 }
+
+//___________________________________LimitBreakCard____________________________________
+LimitBreakCard::LimitBreakCard():SkillCard(CardType::Skill, "LimitBreak",
+    "Double your Strength - Exhaust", 1, 0) {}
+
+void LimitBreakCard::applyEffect(class Character* caster, class Character* target) {
+    SkillCard::applyEffect(caster, target);
+    if (caster) {
+        cout << "LimitBreak card played!\n";
+        int currentStrength = 2;
+        // currentStrength = caster->getStatusValue("Strength");
+        // caster->applyStatus("Strength", currentStrength); 
+        cout << " -> Your Strength has been doubled! (Added " << currentStrength << " more Strength)\n";
+        // caster->exhaustCard(this);
+        cout << " -> LimitBreak has been Exhausted and moved to the exhaust pile\n";
+    }
+}
+
+//____________________________________OfferingCard_____________________________________
+OfferingCard::OfferingCard():SkillCard(CardType::Skill, "Offering",
+    "Lose 6 HP - Gain 2 Energy - Draw 3 cards - Exhaust", 0, 0) {}
+
+void OfferingCard::applyEffect(class Character* caster, class Character* target) {
+    SkillCard::applyEffect(caster, target); 
+
+    if (caster) {
+        cout << "Offering card played! A risky but powerful move...\n";
+        // caster->decreaseHP(6);
+        cout << " -> You lost 6 HP\n";
+        // caster->increaseEnergy(2);
+        cout << " -> Gained 2 Energy\n";
+        // caster->drawCards(3);
+        cout << " -> Drew 3 cards into your hand\n";
+        // caster->exhaustCard(this);
+        cout << " -> Offering has been Exhausted and moved to the exhaust pile\n";
+    }
+}
+
+//____________________________________ImperviousCard___________________________________
+ImperviousCard::ImperviousCard(): SkillCard(CardType::Skill, "Impervious",
+    "Gain 30 block - Exhaust", 2, 30) {}
+
+void ImperviousCard::applyEffect(class Character* caster, class Character* target) {
+    SkillCard::applyEffect(caster, target);
+    if (caster) {
+        int realBlock = 30;
+        // realBlock = caster->calculate_total_block(30); 
+        // caster->AddBlock(realBlock); 
+        cout << "Impervious card played! -> Gained " << realBlock << " block\n";
+        // caster->exhaustCard(this);
+        cout << " -> Impervious has been Exhausted and moved to the exhaust pile\n";
+    }
+}

@@ -27,4 +27,19 @@ class ExhumeCard : public SkillCard {
     void applyEffect(class Character* caster, class Character* target) override;
 };
 
+class LimitBreakCard : public SkillCard {
+    LimitBreakCard();
+    void applyEffect(class Character* caster, class Character* target) override;
+};
+
+class OfferingCard : public SkillCard {
+    OfferingCard();
+    void applyEffect(class Character* caster, class Character* target) override;
+};
+
+class ImperviousCard : public SkillCard {
+    ImperviousCard();
+    void applyEffect(class Character* caster, class Character* target) override;
+};
+
 #endif
