@@ -50,4 +50,14 @@ class TwinStrikeCard : public AttackCard {
 	void applyEffect(class Character* caster, class Character* target) override;
 };
 
+class PerfectedStrike : public AttackCard {
+	PerfectedStrike();
+	void applyEffect(class Character* caster, class Character* target) override;
+};
+
+class ClashCard : public AttackCard {
+	ClashCard();
+	void applyEffect(class Character* caster, class Character* target) override;
+};
+
 #endif

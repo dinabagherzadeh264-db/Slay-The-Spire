@@ -133,3 +133,41 @@ void TwinStrikeCard::applyEffect(class Character* caster, class Character* targe
 			cout << " -> [Hit " << (i + 1) << "] Dealt " << realDamage << " real damage to target\n";
 	}
 }
+
+//___________________________________PerfectedStrikeCard____________________________________
+PerfectedStrike::PerfectedStrike():AttackCard(CardType::Attack, "PerfectedStrike",
+	"Deal 6 damage + 2 additional for every Strike card in deck", 2, 6) {}
+
+void PerfectedStrike::applyEffect(class Character* caster, class Character* target) {
+	AttackCard::applyEffect(caster, target);
+	if (caster && target) {
+		int realDamage = 6;
+		int StrikeCardsInDeck = 1;
+		//if( count_cards_in_deck(StrikeCard) > 0)
+			//StrikeCards_in_deck = count_cards_in_deck("StrikeCard");
+		for (int i = 0; i < StrikeCardsInDeck; i++)
+			realDamage += 2;
+		// realDamage = target->claculate_total_damage(realDamage);
+		cout << "Perfected Strike card played! -> Dealt " << realDamage << " real damage\n";
+	}
+}
+
+//________________________________________ClashCard_________________________________________
+ClashCard::ClashCard():AttackCard(CardType::Attack, "Clash",
+	"Deal 14 damage - Can only be played if every card in hand is an attack", 0, 14) {}
+
+void ClashCard::applyEffect(class Character* caster, class Character* target) {
+	if (caster && target) {
+		bool AllCardsInHandAreAttack = false;
+		//if( caster->checkIfAllHandIsAttack() )
+			//AllCardsInHandAreAttack = true;
+		if (AllCardsInHandAreAttack) {
+			AttackCard::applyEffect(caster, target);
+			int realDamage = 14;
+			// realDamage = target->claculate_total_damage(14);
+			cout << "Clash card played! -> Dealt " << realDamage << " real damage\n";
+		}
+		else 
+			cout << "Cannot play Clash because there are non-Attack cards in your hand :(\n";
+	}
+}
