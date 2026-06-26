@@ -25,13 +25,34 @@ void DazeCard::applyEffect(class Character* caster, class Character* target) {
 
 //______________________________________SlimeCard_______________________________________
 SlimeCard::SlimeCard() : StatusCard(CardType::Status, "Slime",
-    "Has no effect - Exhaust", 1) {
-}
+    "Has no effect - Exhaust", 1) {}
 
 void SlimeCard::applyEffect(class Character* caster, class Character* target) {
     if (caster) {
         cout << "Slime card played but hey it has no effect!\n";
         // caster->exhaustCard(this);
         cout << " -> Slime has been Exhausted and moved to the exhaust pile\n";
+    }
+}
+
+//_______________________________________WoundCard______________________________________
+WoundCard::WoundCard() : StatusCard(CardType::Status, "Wound",
+    "Unplayable - Has no effect") {}
+
+void WoundCard::applyEffect(class Character* caster, class Character* target) {
+    StatusCard::applyEffect(caster, target);
+    cout << "Wound card is in your hand... It just takes up space without any effects!\n";
+}
+
+//_______________________________________BurnCard_______________________________________
+BurnCard::BurnCard() : StatusCard(CardType::Status, "Burn",
+    "Unplayable - At the end of your turn, if in hand: take 2 damage") {}
+
+void BurnCard::applyEffect(class Character* caster, class Character* target) {
+    StatusCard::applyEffect(caster, target);
+    if (caster) {
+        cout << "Burn card detected in hand!\n";
+        // caster->take_damage(2);
+        cout << " -> Burn effect active! (You will take 2 damage if this stays in your hand)\n";
     }
 }
