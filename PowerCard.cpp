@@ -26,8 +26,7 @@ void InflameCard::applyEffect(class Character* caster, class Character* target) 
 
 //___________________________________MetallicizeCard___________________________________
 MetallicizeCard::MetallicizeCard() : PowerCard(CardType::Power, "Metallicize",
-    "At the end of your turn get 3 block", 1) {
-}
+    "At the end of your turn get 3 block", 1) {}
 
 void MetallicizeCard::applyEffect(class Character* caster, class Character* target) {
     PowerCard::applyEffect(caster, target);
@@ -35,5 +34,31 @@ void MetallicizeCard::applyEffect(class Character* caster, class Character* targ
         cout << "Metallicize card played!\n";
         // caster->applyStatus("Metallicize", 3);
         cout << " -> Metallicize buff applied! (you will gain 3 block at end of your turn)\n";
+    }
+}
+
+//____________________________________DemonFormCard____________________________________
+DemonFormCard::DemonFormCard() : PowerCard(CardType::Power, "DemonForm",
+    "At the start of your turn gain 3 Strength", 3) {}
+
+void DemonFormCard::applyEffect(class Character* caster, class Character* target) {
+    PowerCard::applyEffect(caster, target);
+    if (caster) {
+        cout << "Demon Form card played!\n";
+        // caster->TurnStartEffect("DemonForm");
+        cout << " -> Demon Form applied! (You will gain 3 Strength at the start of each turn)\n";
+    }
+}
+
+//____________________________________BrutalityCard____________________________________
+BrutalityCard::BrutalityCard() : PowerCard(CardType::Power, "Brutality",
+    "At the start of your turn lose 1 HP and draw 1 card", 0) {}
+
+void BrutalityCard::applyEffect(class Character* caster, class Character* target) {
+    PowerCard::applyEffect(caster, target);
+    if (caster) {
+        cout << "Brutality card played!\n";
+        // caster->TurnStartEffect("Brutality");
+        cout << " -> Brutality applied! (You will lose 1 HP and draw 1 card at the start of each turn)\n";
     }
 }

@@ -25,4 +25,16 @@ public:
     void applyEffect(class Character* caster, class Character* target) override;
 };
 
+class DemonFormCard : public PowerCard {
+public:
+    DemonFormCard();
+    void applyEffect(class Character* caster, class Character* target) override;
+};
+
+class BrutalityCard : public PowerCard {
+public:
+    BrutalityCard();
+    void applyEffect(class Character* caster, class Character* target) override;
+};
+
 #endif
