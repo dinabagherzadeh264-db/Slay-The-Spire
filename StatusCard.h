@@ -9,7 +9,7 @@ using namespace std;
 
 class StatusCard : public Card {
 public:
-    StatusCard(CardType type, string name, string desc, int cost = 0);
+    StatusCard(CardType type, string name, string desc, int cost = -1);
     virtual void applyEffect(class Character* caster, class Character* target) override;
 };
 
