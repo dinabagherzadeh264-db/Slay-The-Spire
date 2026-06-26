@@ -35,7 +35,6 @@ WoundCard::WoundCard() : StatusCard(CardType::Status, "Wound",
     "Unplayable - Has no effect") {}
 
 void WoundCard::applyEffect(class Character* caster, class Character* target) {
-    StatusCard::applyEffect(caster, target);
     cout << "Wound card is in your hand... It just takes up space without any effects!\n";
 }
 
@@ -44,7 +43,6 @@ BurnCard::BurnCard() : StatusCard(CardType::Status, "Burn",
     "Unplayable - At the end of your turn, if in hand: take 2 damage") {}
 
 void BurnCard::applyEffect(class Character* caster, class Character* target) {
-    StatusCard::applyEffect(caster, target);
     if (caster) {
         cout << "Burn card detected in hand!\n";
         // caster->take_damage(2);
