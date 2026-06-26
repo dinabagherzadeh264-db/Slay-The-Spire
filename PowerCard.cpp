@@ -62,3 +62,29 @@ void BrutalityCard::applyEffect(class Character* caster, class Character* target
         cout << " -> Brutality applied! (You will lose 1 HP and draw 1 card at the start of each turn)\n";
     }
 }
+
+//____________________________________FeelNoPainCard___________________________________
+FeelNoPainCard::FeelNoPainCard():PowerCard(CardType::Power, "FeelNoPain",
+    "Every time a card is Exhausted, gain 3 block", 1) {}
+
+void FeelNoPainCard::applyEffect(class Character* caster, class Character* target) {
+    PowerCard::applyEffect(caster, target);
+    if (caster) {
+        cout << "Feel No Pain card played!\n";
+        // caster->add_block_when_exhausted();
+        cout << " -> Feel No Pain applied! (You will gain 3 block every time a card is Exhausted)\n";
+    }
+}
+
+//____________________________________BarricadeCard____________________________________
+BarricadeCard::BarricadeCard():PowerCard(CardType::Power, "Barricade",
+    "Block is not removed at the start of your turn", 3) {}
+
+void BarricadeCard::applyEffect(class Character* caster, class Character* target) {
+    PowerCard::applyEffect(caster, target);
+    if (caster) {
+        cout << "Barricade card played!\n";
+        // caster->keep_block_until_next_turn();
+        cout << " -> Barricade applied! (Your block will not be removed at the start of your turn)\n";
+    }
+}

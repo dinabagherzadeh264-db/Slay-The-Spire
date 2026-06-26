@@ -37,4 +37,14 @@ public:
     void applyEffect(class Character* caster, class Character* target) override;
 };
 
+class FeelNoPainCard : public PowerCard {
+    FeelNoPainCard();
+    void applyEffect(class Character* caster, class Character* target) override;
+};
+
+class BarricadeCard : public PowerCard {
+    BarricadeCard();
+    void applyEffect(class Character* caster, class Character* target) override;
+};
+
 #endif
