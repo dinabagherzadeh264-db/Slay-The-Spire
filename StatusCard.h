@@ -13,4 +13,16 @@ public:
     virtual void applyEffect(class Character* caster, class Character* target) override;
 };
 
+class DazeCard : public StatusCard {
+public:
+    DazeCard();
+    void applyEffect(class Character* caster, class Character* target) override;
+};
+
+class SlimeCard : public StatusCard {
+public:
+    SlimeCard();
+    void applyEffect(class Character* caster, class Character* target) override;
+};
+
 #endif
