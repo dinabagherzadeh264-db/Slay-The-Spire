@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "card.h"
+#include <vector>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -17,7 +19,21 @@ public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow() override;
 
+private slots:
+    void on_cardButton_1_clicked();
+
+    void on_cardButton_2_clicked();
+
+    void on_cardButton_3_clicked();
+
+    void on_cardButton_4_clicked();
+
+    void on_cardButton_5_clicked();
+
+    void on_EndTurnButton_clicked();
+
 private:
     Ui::MainWindow *ui;
+    std::vector<Card*> playerHand;
 };
 #endif // MAINWINDOW_H

@@ -7,10 +7,22 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    AttackCard.cpp \
+    CurseCard.cpp \
+    PowerCard.cpp \
+    SkillCard.cpp \
+    StatusCard.cpp \
+    card.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
+    AttackCard.h \
+    CurseCard.h \
+    PowerCard.h \
+    SkillCard.h \
+    StatusCard.h \
+    card.h \
     mainwindow.h
 
 FORMS += \
@@ -23,3 +35,29 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     resources.qrc
+
+DISTFILES += \
+    images/cards/Barricade.png \
+    images/cards/BloodLetting.png \
+    images/cards/Brutality.png \
+    images/cards/Burn.png \
+    images/cards/CurseOfTheBell.png \
+    images/cards/DaulWield.png \
+    images/cards/Daze.png \
+    images/cards/Defend.png \
+    images/cards/DemonForm.png \
+    images/cards/Disarm.png \
+    images/cards/Entrench.png \
+    images/cards/Exhume.png \
+    images/cards/FeelNoPain.png \
+    images/cards/Impervious.png \
+    images/cards/Inflame.png \
+    images/cards/J.A.X.png \
+    images/cards/LimitBreak.png \
+    images/cards/Metallicize.png \
+    images/cards/Regret.png \
+    images/cards/ShrugItOf.png \
+    images/cards/Slime.png \
+    images/cards/Wound.png \
+    images/cards/Writhe.png \
+    images/cards/offering.png
