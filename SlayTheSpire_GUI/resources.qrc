@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file>images/cards/Strike_R.png</file>
+        <file>images/cards/Bash.png</file>
+        <file>images/cards/BloodforBlood.png</file>
+        <file>images/cards/Bludgeon.png</file>
+        <file>images/cards/Clash.png</file>
+        <file>images/cards/Feed.png</file>
+        <file>images/cards/Immolate.png</file>
+        <file>images/cards/PerfectedStrike.png</file>
+        <file>images/cards/Reaper.png</file>
+        <file>images/cards/TwinStrike.png</file>
+        <file>images/cards/Whirlwind.png</file>
+    </qresource>
+</RCC>
