@@ -10,3 +10,4 @@ string Card::getDescription() const { return description; }
 
 int Card::getEnergyCost() const { return energyCost; }
 
+CardType Card::getType() const { return type; }

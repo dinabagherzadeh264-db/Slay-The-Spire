@@ -20,6 +20,7 @@ public:
 	string getName() const;
 	string getDescription() const;
 	int getEnergyCost() const;
+	CardType getType() const;
 };
 
 #endif
