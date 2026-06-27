@@ -18,9 +18,9 @@ InflameCard::InflameCard(): PowerCard(CardType::Power, "Inflame",
 void InflameCard::applyEffect(class Character* caster, class Character* target) {
     PowerCard::applyEffect(caster, target);
     if (caster) {
-        cout << "Inflame card played!\n";
+        //cout << "Inflame card played!\n";
         //caster->applyStatus("Strength", 2); 
-        cout << " -> You gained 2 strength\n";
+        //cout << " -> You gained 2 strength\n";
     }
 }
 
@@ -31,7 +31,7 @@ MetallicizeCard::MetallicizeCard() : PowerCard(CardType::Power, "Metallicize",
 void MetallicizeCard::applyEffect(class Character* caster, class Character* target) {
     PowerCard::applyEffect(caster, target);
     if (caster) {
-        cout << "Metallicize card played!\n";
+        //cout << "Metallicize card played!\n";
         // caster->applyStatus("Metallicize", 3);
         cout << " -> Metallicize buff applied! (you will gain 3 block at end of your turn)\n";
     }
@@ -44,7 +44,7 @@ DemonFormCard::DemonFormCard() : PowerCard(CardType::Power, "DemonForm",
 void DemonFormCard::applyEffect(class Character* caster, class Character* target) {
     PowerCard::applyEffect(caster, target);
     if (caster) {
-        cout << "Demon Form card played!\n";
+        //cout << "Demon Form card played!\n";
         // caster->TurnStartEffect("DemonForm");
         cout << " -> Demon Form applied! (You will gain 3 Strength at the start of each turn)\n";
     }
@@ -57,7 +57,7 @@ BrutalityCard::BrutalityCard() : PowerCard(CardType::Power, "Brutality",
 void BrutalityCard::applyEffect(class Character* caster, class Character* target) {
     PowerCard::applyEffect(caster, target);
     if (caster) {
-        cout << "Brutality card played!\n";
+        //cout << "Brutality card played!\n";
         // caster->TurnStartEffect("Brutality");
         cout << " -> Brutality applied! (You will lose 1 HP and draw 1 card at the start of each turn)\n";
     }
@@ -70,7 +70,7 @@ FeelNoPainCard::FeelNoPainCard():PowerCard(CardType::Power, "FeelNoPain",
 void FeelNoPainCard::applyEffect(class Character* caster, class Character* target) {
     PowerCard::applyEffect(caster, target);
     if (caster) {
-        cout << "Feel No Pain card played!\n";
+        //cout << "Feel No Pain card played!\n";
         // caster->add_block_when_exhausted();
         cout << " -> Feel No Pain applied! (You will gain 3 block every time a card is Exhausted)\n";
     }
@@ -83,7 +83,7 @@ BarricadeCard::BarricadeCard():PowerCard(CardType::Power, "Barricade",
 void BarricadeCard::applyEffect(class Character* caster, class Character* target) {
     PowerCard::applyEffect(caster, target);
     if (caster) {
-        cout << "Barricade card played!\n";
+        //cout << "Barricade card played!\n";
         // caster->keep_block_until_next_turn();
         cout << " -> Barricade applied! (Your block will not be removed at the start of your turn)\n";
     }

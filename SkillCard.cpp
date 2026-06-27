@@ -23,7 +23,7 @@ void DefendCard::applyEffect(class Character* caster, class Character* target) {
         int realBlock = 5;
         // realBlock = caster->calculate_total_block(5); 
         // caster->AddBlock(realBlock); 
-        cout << "Defend card played! -> Gained " << realBlock << " block\n";
+        //cout << "Defend card played! -> Gained " << realBlock << " block\n";
     }
 }
 
@@ -34,7 +34,7 @@ ExhumeCard::ExhumeCard():SkillCard(CardType::Skill, "Exhume",
 void ExhumeCard::applyEffect(class Character* caster, class Character* target) {
     SkillCard::applyEffect(caster, target); 
     if (caster) {
-        cout << "Exhume card played!\n";
+        //cout << "Exhume card played!\n";
         bool hasExhaustedCards = true; 
         // if (caster->hasCardsInExhaustPile()) { ... }
         if (hasExhaustedCards) {
@@ -55,7 +55,7 @@ LimitBreakCard::LimitBreakCard():SkillCard(CardType::Skill, "LimitBreak",
 void LimitBreakCard::applyEffect(class Character* caster, class Character* target) {
     SkillCard::applyEffect(caster, target);
     if (caster) {
-        cout << "LimitBreak card played!\n";
+        //cout << "LimitBreak card played!\n";
         int currentStrength = 2;
         // currentStrength = caster->getStatusValue("Strength");
         // caster->applyStatus("Strength", currentStrength); 
@@ -72,13 +72,13 @@ OfferingCard::OfferingCard():SkillCard(CardType::Skill, "Offering",
 void OfferingCard::applyEffect(class Character* caster, class Character* target) {
     SkillCard::applyEffect(caster, target); 
     if (caster) {
-        cout << "Offering card played! A risky but powerful move...\n";
+        //cout << "Offering card played! A risky but powerful move...\n";
         // caster->decreaseHP(6);
-        cout << " -> You lost 6 HP\n";
+        //cout << " -> You lost 6 HP\n";
         // caster->increaseEnergy(2);
-        cout << " -> Gained 2 Energy\n";
+        //cout << " -> Gained 2 Energy\n";
         // caster->drawCards(3);
-        cout << " -> Drew 3 cards into your hand\n";
+        //cout << " -> Drew 3 cards into your hand\n";
         // caster->exhaustCard(this);
         cout << " -> Offering has been Exhausted and moved to the exhaust pile\n";
     }
@@ -94,7 +94,7 @@ void ImperviousCard::applyEffect(class Character* caster, class Character* targe
         int realBlock = 30;
         // realBlock = caster->calculate_total_block(30); 
         // caster->AddBlock(realBlock); 
-        cout << "Impervious card played! -> Gained " << realBlock << " block\n";
+        //cout << "Impervious card played! -> Gained " << realBlock << " block\n";
         // caster->exhaustCard(this);
         cout << " -> Impervious has been Exhausted and moved to the exhaust pile\n";
     }
@@ -107,10 +107,10 @@ DualWieldCard::DualWieldCard(): SkillCard(CardType::Skill, "DualWield",
 void DualWieldCard::applyEffect(class Character* caster, class Character* target) {
     SkillCard::applyEffect(caster, target); 
     if (caster) {
-        cout << "DualWield card played!\n";
+        //cout << "DualWield card played!\n";
         // Card* chosenCard = caster->chooseCardFromHand();
         // caster->addCopiesToHand(chosenCard, 2);
-        cout << " -> Chose a card from your hand and added 2 copies of it into your hand!\n";
+        //cout << " -> Chose a card from your hand and added 2 copies of it into your hand!\n";
     }
 }
 
@@ -121,11 +121,11 @@ EntrenchCard::EntrenchCard(): SkillCard(CardType::Skill, "Entrench",
 void EntrenchCard::applyEffect(class Character* caster, class Character* target) {
     SkillCard::applyEffect(caster, target);
     if (caster) {
-        cout << "Entrench card played!\n";
+        //cout << "Entrench card played!\n";
         int currentBlock = 0;
         //currentBlock = caster->getBlock();
         //caster->setBlock( currentBlock * 2 );
-        cout << " -> your Block was doubled\n";
+        //cout << " -> your Block was doubled\n";
     }
 }
 
@@ -136,13 +136,13 @@ ShrugItOffCard::ShrugItOffCard(): SkillCard(CardType::Skill, "ShrugItOff",
 void ShrugItOffCard::applyEffect(class Character* caster, class Character* target) {
     SkillCard::applyEffect(caster, target);
     if (caster) {
-        cout << "ShrugItOff card played!\n";
+        //cout << "ShrugItOff card played!\n";
         // caster->drawCards(1);
-        cout << " -> Drew 1 cards into your hand\n";
+        //cout << " -> Drew 1 cards into your hand\n";
         int realBlock = 8;
         // realBlock = caster->calculate_total_block(8); 
         // caster->AddBlock(realBlock); 
-        cout << " -> Gained " << realBlock << " block\n";
+        //cout << " -> Gained " << realBlock << " block\n";
     }
 }
 
@@ -153,11 +153,11 @@ BloodlettingCard::BloodlettingCard(): SkillCard(CardType::Skill, "Bloodletting",
 void BloodlettingCard::applyEffect(class Character* caster, class Character* target) {
     SkillCard::applyEffect(caster, target);
     if (caster) {
-        cout << "Bloodletting card played!\n";
+        //cout << "Bloodletting card played!\n";
         // caster->decreaseHP(3);
-        cout << " -> You lost 3 HP\n";
+        //cout << " -> You lost 3 HP\n";
         // caster->increaseEnergy(2);
-        cout << " -> Gained 2 Energy\n";
+        //cout << " -> Gained 2 Energy\n";
     }
 }
 
@@ -168,9 +168,9 @@ DisarmCard::DisarmCard(): SkillCard(CardType::Skill, "Disarm",
 void DisarmCard::applyEffect(class Character* caster, class Character* target) {
     SkillCard::applyEffect(caster, target);
     if (caster) {
-        cout << "Disarm card played!\n";
+        //cout << "Disarm card played!\n";
         //target->applyStatus("Strength", -2); 
-        cout << " -> Enemy lost 2 strength\n";
+        //cout << " -> Enemy lost 2 strength\n";
         // caster->exhaustCard(this);
         cout << " -> Disarm has been Exhausted and moved to the exhaust pile\n";
     }

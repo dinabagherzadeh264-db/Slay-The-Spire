@@ -27,8 +27,8 @@ void ReaperCard::applyEffect(class Character* caster, class Character* target) {
 		int realDamage = 4;
 		//realDamage = target->claculate_total_damage(4);
 		//caster->increaseHP(realDamage);
-		cout << "Reaper card played! (Base Damage: 4) -> Dealt " << realDamage
-			<< " real damage. Your HP increased by " << realDamage << endl;
+		//cout << "Reaper card played! (Base Damage: 4) -> Dealt " << realDamage
+		//	<< " real damage. Your HP increased by " << realDamage << endl;
 	}
 }
 
@@ -44,7 +44,7 @@ void FeedCard::applyEffect(class Character* caster, class Character* target) {
 		// bool isFatal = (realDamage >= target->getHP()); 
 		//if (isFatal)
 			// caster->increaseMaxHP(3); 
-		cout << "Feed card played! (Base Damage: 10) -> Dealt " << realDamage << " real damage\n";
+		//cout << "Feed card played! (Base Damage: 10) -> Dealt " << realDamage << " real damage\n";
 		//if (isFatal) 
 			//cout << "Fatal blow! Your Max HP increased by 3!\n";
 	}
@@ -60,7 +60,7 @@ void ImmolateCard::applyEffect(class Character* caster, class Character* target)
 		int realDamage = 21;
 		//realDamage = target->claculate_total_damage(21);
 		// caster->addBurnToDiscard(2);
-		cout << "Immolate Card played! (Base Damage: 21) -> Dealt " << realDamage << " real damage\n";
+		//cout << "Immolate Card played! (Base Damage: 21) -> Dealt " << realDamage << " real damage\n";
 		// cout << "2 BURN cards added to discard pile!\n";
 	}
 }
@@ -75,10 +75,9 @@ void WhirlwindCard::applyEffect(class Character* caster, class Character* target
 		//currentEnergy = caster->getEnergy(); 
 		int realDamage = 5;
 		// realDamage = target->claculate_total_damage(5);
-		cout << "Whirlwind card played! Expending ALL " << currentEnergy << " energy\n";
-		for (int i = 0; i < currentEnergy; i++) {
-			cout << " -> [Hit " << (i + 1) << "] Dealt " << realDamage << " real damage to target\n";
-		}
+		//cout << "Whirlwind card played! Expending ALL " << currentEnergy << " energy\n";
+		//for (int i = 0; i < currentEnergy; i++) 
+		//	cout << " -> [Hit " << (i + 1) << "] Dealt " << realDamage << " real damage to target\n";
 		// caster->decreaseEnergy(currentEnergy);
 	}
 }
@@ -97,9 +96,9 @@ void Blood_for_BloodCard::applyEffect(class Character* caster, class Character* 
 			currentCost = 0;
 		int realDamage = 18;
 		// realDamage = target->claculate_total_damage(18);
-		cout << "Blood for Blood Card played! Cost: " << currentCost <<
-			" energy (Base cost reduced because you took damage " << timesDamaged << 
-			" times) \n-> Dealt" << realDamage << " damage to enemy.\n";
+		//cout << "Blood for Blood Card played! Cost: " << currentCost <<
+		//	" energy (Base cost reduced because you took damage " << timesDamaged << 
+		//	" times) \n-> Dealt" << realDamage << " damage to enemy.\n";
 		// caster->decreaseEnergy(currentCost);
 	}
 }
@@ -113,9 +112,9 @@ void BashCard::applyEffect(class Character* caster, class Character* target) {
 	if (caster && target) {
 		int realDamage = 8;
 		// realDamage = target->claculate_total_damage(8);
-		cout << "Bash card played! -> Dealt " << realDamage << " real damage\n";
+		//cout << "Bash card played! -> Dealt " << realDamage << " real damage\n";
 		// target->applyStatus("Vulnerable", 2); 
-		cout << "Applied 2 turns of Vulnerable to the target\n";
+		//cout << "Applied 2 turns of Vulnerable to the target\n";
 	}
 }
 
@@ -128,9 +127,9 @@ void TwinStrikeCard::applyEffect(class Character* caster, class Character* targe
 	if (caster && target) {
 		int realDamage = 6;
 		// realDamage = target->claculate_total_damage(6);
-		cout << "Twin Strike card played!\n";
-		for (int i = 0; i < 2; i++) 
-			cout << " -> [Hit " << (i + 1) << "] Dealt " << realDamage << " real damage to target\n";
+		//cout << "Twin Strike card played!\n";
+		//for (int i = 0; i < 2; i++) 
+		//	cout << " -> [Hit " << (i + 1) << "] Dealt " << realDamage << " real damage to target\n";
 	}
 }
 
@@ -148,7 +147,7 @@ void PerfectedStrike::applyEffect(class Character* caster, class Character* targ
 		for (int i = 0; i < StrikeCardsInDeck; i++)
 			realDamage += 2;
 		// realDamage = target->claculate_total_damage(realDamage);
-		cout << "Perfected Strike card played! -> Dealt " << realDamage << " real damage\n";
+		//cout << "Perfected Strike card played! -> Dealt " << realDamage << " real damage\n";
 	}
 }
 
@@ -165,7 +164,7 @@ void ClashCard::applyEffect(class Character* caster, class Character* target) {
 			AttackCard::applyEffect(caster, target);
 			int realDamage = 14;
 			// realDamage = target->claculate_total_damage(14);
-			cout << "Clash card played! -> Dealt " << realDamage << " real damage\n";
+			//cout << "Clash card played! -> Dealt " << realDamage << " real damage\n";
 		}
 		else 
 			cout << "Cannot play Clash because there are non-Attack cards in your hand :(\n";
