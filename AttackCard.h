@@ -36,26 +36,31 @@ public:
 };
 
 class Blood_for_BloodCard : public AttackCard {
+public:
 	Blood_for_BloodCard();
 	void applyEffect(class Character* caster, class Character* target) override;
 };
 
 class BashCard : public AttackCard {
+public:
 	BashCard();
 	void applyEffect(class Character* caster, class Character* target) override;
 };
 
 class TwinStrikeCard : public AttackCard {
+public:
 	TwinStrikeCard();
 	void applyEffect(class Character* caster, class Character* target) override;
 };
 
 class PerfectedStrike : public AttackCard {
+public:
 	PerfectedStrike();
 	void applyEffect(class Character* caster, class Character* target) override;
 };
 
 class ClashCard : public AttackCard {
+public:
 	ClashCard();
 	void applyEffect(class Character* caster, class Character* target) override;
 };

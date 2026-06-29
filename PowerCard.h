@@ -38,11 +38,13 @@ public:
 };
 
 class FeelNoPainCard : public PowerCard {
+public:
     FeelNoPainCard();
     void applyEffect(class Character* caster, class Character* target) override;
 };
 
 class BarricadeCard : public PowerCard {
+public:
     BarricadeCard();
     void applyEffect(class Character* caster, class Character* target) override;
 };
