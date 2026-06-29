@@ -35,5 +35,6 @@ private slots:
 private:
     Ui::MainWindow *ui;
     std::vector<Card*> playerHand;
+    void updateHandUI();
 };
 #endif // MAINWINDOW_H

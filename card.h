@@ -21,6 +21,7 @@ public:
 	string getDescription() const;
 	int getEnergyCost() const;
 	CardType getType() const;
+	virtual bool isPlayable() const; 
 };
 
 #endif

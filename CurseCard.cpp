@@ -1,10 +1,12 @@
 #include "CurseCard.h"
 
-//______________________________________StatusCard______________________________________
-CurseCard::CurseCard(CardType type, string name, string description, int cost = -1)
+//_______________________________________CurseCard________________________________________
+CurseCard::CurseCard(CardType type, string name, string description, int cost)
 	: Card(type, name, description, cost) {}
 
 void CurseCard::applyEffect(class Character* caster, class Character* target) {}
+
+bool CurseCard::isPlayable() const { return false; }
 
 //________________________________________J.A.XCard_______________________________________
 JAXCard::JAXCard():CurseCard(CardType::Curse, "JAX",
@@ -18,6 +20,8 @@ void JAXCard::applyEffect(class Character* caster, class Character* target) {
         //cout << " -> You lost 3 HP and gained 2 Strength\n";
     }
 }
+
+bool JAXCard::isPlayable() const { return true; }
 
 //____________________________________CurseOfBellCard___________________________________
 CurseOfBellCard::CurseOfBellCard() :CurseCard(CardType::Curse, "CurseOfBell",

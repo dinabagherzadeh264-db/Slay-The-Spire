@@ -11,6 +11,7 @@ class StatusCard : public Card {
 public:
     StatusCard(CardType type, string name, string desc, int cost = -1);
     virtual void applyEffect(class Character* caster, class Character* target) override;
+    virtual bool isPlayable() const override;
 };
 
 class DazeCard : public StatusCard {
@@ -23,6 +24,7 @@ class SlimeCard : public StatusCard {
 public:
     SlimeCard();
     void applyEffect(class Character* caster, class Character* target) override;
+    bool isPlayable() const override;
 };
 
 class WoundCard : public StatusCard {

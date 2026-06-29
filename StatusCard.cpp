@@ -6,6 +6,8 @@ StatusCard::StatusCard(CardType type, string name, string description, int cost)
 
 void StatusCard::applyEffect(class Character* caster, class Character* target) {}
 
+bool StatusCard::isPlayable() const { return false; }
+
 //_______________________________________DazeCard_______________________________________
 DazeCard::DazeCard(): StatusCard(CardType::Status, "Daze", 
     "Unplayable - Ethereal") {}
@@ -29,6 +31,8 @@ void SlimeCard::applyEffect(class Character* caster, class Character* target) {
         cout << " -> Slime has been Exhausted and moved to the exhaust pile\n";
     }
 }
+
+bool SlimeCard::isPlayable() const { return true; }
 
 //_______________________________________WoundCard______________________________________
 WoundCard::WoundCard() : StatusCard(CardType::Status, "Wound",
