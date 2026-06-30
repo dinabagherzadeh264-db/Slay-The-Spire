@@ -33,6 +33,7 @@ private:
     Ui::MainWindow *ui;
     std::vector<Card*> playerHand;
     void updateHandUI();
+    void drawRandomCards(int numberOfCards);
 };
 
 Card* createCardByName(const std::string& name);

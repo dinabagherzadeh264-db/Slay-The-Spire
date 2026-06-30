@@ -11,12 +11,16 @@
 #include "../SkillCard.h"
 #include "../PowerCard.h"
 #include "../StatusCard.h"
+#include<QDebug>
+#include<Qfile>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    std::srand(std::time(nullptr));
+    drawRandomCards(5);
 }
 
 MainWindow::~MainWindow()
@@ -49,12 +53,13 @@ void MainWindow::updateHandUI() {
             buttons[i]->setText("");
 
             QString cardName = QString::fromStdString(playerHand[i]->getName());
-            QString imgPath = ":/images/" + cardName + ".png";
+            QString imgPath = ":/images/cards/" + cardName + ".png";
 
             QIcon cardIcon(imgPath);
             buttons[i]->setIcon(cardIcon);
             buttons[i]->setIconSize(buttons[i]->size());
-        } else {
+        }
+        else {
             buttons[i]->hide();
         }
     }
@@ -76,7 +81,7 @@ Card* createCardByName(const std::string& name) {
     if (name == "Bloodletting")    return new BloodlettingCard();
     if (name == "Brutality")       return new BrutalityCard();
     if (name == "Burn")            return new BurnCard();
-    if (name == "CurseOfTheBell")  return new CurseOfBellCard();
+    if (name == "CurseOfBell")  return new CurseOfBellCard();
     if (name == "DualWield")       return new DualWieldCard();
     if (name == "Daze")            return new DazeCard();
     if (name == "Defend")          return new DefendCard();
@@ -96,4 +101,30 @@ Card* createCardByName(const std::string& name) {
     if (name == "Slime")           return new SlimeCard();
     if (name == "Wound")           return new WoundCard();
     return nullptr;
+}
+
+void MainWindow::drawRandomCards(int numberOfCards) {
+    std::vector<std::string> allCardNames = {
+        "Bash", "Blood for Blood", "Clash", "Feed", "Immolate", "PerfectedStrike", "Reaper",
+        "Strike", "Bludgeon", "TwinStrike", "Whirlwind", "Barricade", "Bloodletting", "Brutality",
+        "Burn", "CurseOfBell", "DualWield", "Daze", "Defend", "DemonForm", "Disarm", "Entrench",
+        "Exhume", "FeelNoPain", "Impervious", "Inflame", "JAX", "LimitBreak", "Metallicize",
+        "Offering", "Regret", "ShrugItOff", "Slime", "Wound"};
+
+    for (Card* card : playerHand) {
+        delete card;
+    }
+    playerHand.clear();
+
+    for (int i = 0; i < numberOfCards; ++i) {
+        int randomIndex = std::rand() % allCardNames.size();
+        std::string randomName = allCardNames[randomIndex];
+
+        Card* newCard = createCardByName(randomName);
+
+        if (newCard != nullptr) {
+            playerHand.push_back(newCard);
+        }
+    }
+    updateHandUI();
 }

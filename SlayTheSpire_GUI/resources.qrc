@@ -32,5 +32,7 @@
         <file>images/cards/ShrugItOff.png</file>
         <file>images/cards/Slime.png</file>
         <file>images/cards/Wound.png</file>
+        <file>images/cards/Strike.png</file>
+        <file>images/cards/TwinStrike.png</file>
     </qresource>
 </RCC>
