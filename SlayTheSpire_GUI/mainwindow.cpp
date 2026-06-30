@@ -28,25 +28,56 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::on_cardButton_1_clicked() { ui->cardButton_1->hide(); }
-void MainWindow::on_cardButton_2_clicked() { ui->cardButton_2->hide(); }
-void MainWindow::on_cardButton_3_clicked() { ui->cardButton_3->hide(); }
-void MainWindow::on_cardButton_4_clicked() { ui->cardButton_4->hide(); }
-void MainWindow::on_cardButton_5_clicked() { ui->cardButton_5->hide(); }
+void MainWindow::on_cardButton_1_clicked() {
+    if (0 < playerHand.size()) {
+        delete playerHand[0];
+        playerHand.erase(playerHand.begin() + 0);
+        updateHandUI();
+    }
+}
+
+void MainWindow::on_cardButton_2_clicked() {
+    if (1 < playerHand.size()) {
+        delete playerHand[1];
+        playerHand.erase(playerHand.begin() + 1);
+        updateHandUI();
+    }
+}
+
+void MainWindow::on_cardButton_3_clicked() {
+    if (4 < playerHand.size()) {
+        delete playerHand[4];
+        playerHand.erase(playerHand.begin() + 4);
+        updateHandUI();
+    }
+}
+
+void MainWindow::on_cardButton_4_clicked() {
+    if (2 < playerHand.size()) {
+        delete playerHand[2];
+        playerHand.erase(playerHand.begin() + 2);
+        updateHandUI();
+    }
+}
+
+void MainWindow::on_cardButton_5_clicked() {
+    if (3 < playerHand.size()) {
+        delete playerHand[3];
+        playerHand.erase(playerHand.begin() + 3);
+        updateHandUI();
+    }
+}
 
 void MainWindow::on_EndTurnButton_clicked()
 {
-    ui->cardButton_1->show();
-    ui->cardButton_2->show();
-    ui->cardButton_3->show();
-    ui->cardButton_4->show();
-    ui->cardButton_5->show();
+    drawRandomCards(5);
 }
 
 void MainWindow::updateHandUI() {
-    QPushButton* buttons[] = { ui->cardButton_1, ui->cardButton_2, ui->cardButton_3, ui->cardButton_4, ui->cardButton_5 };
+    QPushButton* buttons[] = { ui->cardButton_1, ui->cardButton_2, ui->cardButton_4, ui->cardButton_5, ui->cardButton_3 };
 
     for (int i = 0; i < 5; ++i) {
+        buttons[i]->setIcon(QIcon());
         if (i < playerHand.size() && playerHand[i] != nullptr) {
             buttons[i]->show();
             buttons[i]->setEnabled(playerHand[i]->isPlayable());
@@ -81,7 +112,7 @@ Card* createCardByName(const std::string& name) {
     if (name == "Bloodletting")    return new BloodlettingCard();
     if (name == "Brutality")       return new BrutalityCard();
     if (name == "Burn")            return new BurnCard();
-    if (name == "CurseOfBell")  return new CurseOfBellCard();
+    if (name == "CurseOfBell")     return new CurseOfBellCard();
     if (name == "DualWield")       return new DualWieldCard();
     if (name == "Daze")            return new DazeCard();
     if (name == "Defend")          return new DefendCard();
@@ -97,7 +128,7 @@ Card* createCardByName(const std::string& name) {
     if (name == "Metallicize")     return new MetallicizeCard();
     if (name == "Offering")        return new OfferingCard();
     if (name == "Regret")          return new RegretCard();
-    if (name == "ShrugItOff")       return new ShrugItOffCard();
+    if (name == "ShrugItOff")      return new ShrugItOffCard();
     if (name == "Slime")           return new SlimeCard();
     if (name == "Wound")           return new WoundCard();
     return nullptr;
