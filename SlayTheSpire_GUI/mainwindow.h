@@ -2,8 +2,10 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "card.h"
 #include <vector>
+#include <string>
+
+class Card;
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -21,15 +23,10 @@ public:
 
 private slots:
     void on_cardButton_1_clicked();
-
     void on_cardButton_2_clicked();
-
     void on_cardButton_3_clicked();
-
     void on_cardButton_4_clicked();
-
     void on_cardButton_5_clicked();
-
     void on_EndTurnButton_clicked();
 
 private:
@@ -37,4 +34,7 @@ private:
     std::vector<Card*> playerHand;
     void updateHandUI();
 };
-#endif // MAINWINDOW_H
+
+Card* createCardByName(const std::string& name);
+
+#endif

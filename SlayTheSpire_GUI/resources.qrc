@@ -1,15 +1,36 @@
 <RCC>
-    <qresource prefix="/new/prefix1">
-        <file>images/cards/Strike_R.png</file>
+    <qresource prefix="/">
         <file>images/cards/Bash.png</file>
-        <file>images/cards/BloodforBlood.png</file>
+        <file>images/cards/Blood for Blood.png</file>
         <file>images/cards/Bludgeon.png</file>
         <file>images/cards/Clash.png</file>
         <file>images/cards/Feed.png</file>
         <file>images/cards/Immolate.png</file>
         <file>images/cards/PerfectedStrike.png</file>
         <file>images/cards/Reaper.png</file>
-        <file>images/cards/TwinStrike.png</file>
         <file>images/cards/Whirlwind.png</file>
+        <file>images/cards/Barricade.png</file>
+        <file>images/cards/Bloodletting.png</file>
+        <file>images/cards/Brutality.png</file>
+        <file>images/cards/Burn.png</file>
+        <file>images/cards/CurseOfBell.png</file>
+        <file>images/cards/Daze.png</file>
+        <file>images/cards/Defend.png</file>
+        <file>images/cards/DemonForm.png</file>
+        <file>images/cards/Disarm.png</file>
+        <file>images/cards/DualWield.png</file>
+        <file>images/cards/Entrench.png</file>
+        <file>images/cards/Exhume.png</file>
+        <file>images/cards/FeelNoPain.png</file>
+        <file>images/cards/Impervious.png</file>
+        <file>images/cards/Inflame.png</file>
+        <file>images/cards/JAX.png</file>
+        <file>images/cards/LimitBreak.png</file>
+        <file>images/cards/Metallicize.png</file>
+        <file>images/cards/Offering.png</file>
+        <file>images/cards/Regret.png</file>
+        <file>images/cards/ShrugItOff.png</file>
+        <file>images/cards/Slime.png</file>
+        <file>images/cards/Wound.png</file>
     </qresource>
 </RCC>

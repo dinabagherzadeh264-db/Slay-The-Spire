@@ -1,5 +1,5 @@
-#ifndef STATUSCARD_H
-#define STATUSCARD_H
+#ifndef CURSECARD_H
+#define CURSECARD_H
 
 #include "Card.h"
 #include <iostream>

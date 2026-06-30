@@ -1,7 +1,7 @@
 #ifndef STATUSCARD_H
 #define STATUSCARD_H
 
-#include "Card.h"
+#include "card.h"
 #include <iostream>
 #include <string>
 
