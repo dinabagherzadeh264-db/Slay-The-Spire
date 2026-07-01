@@ -20,4 +20,10 @@ public:
     virtual int modifyIncomingDamage(int baseDamage);
 };
 
+class StrengthEffect : public StatusEffect {
+public:
+    StrengthEffect(int increaseDamageBy);
+    int modifyOutgoingDamage(int baseDamage) override;
+};
+
 #endif
