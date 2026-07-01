@@ -34,3 +34,39 @@ void VulnerableEffect::onTurnEnd() {
     if (amount > 0) 
         amount--; 
 }
+
+//________________________________________WeakEffect________________________________________
+WeakEffect::WeakEffect(int turns) : StatusEffect("Weak", turns) {}
+
+int WeakEffect::modifyOutgoingDamage(int baseDamage) {
+    if (amount > 0)
+        return baseDamage * 0.5;
+    return baseDamage;
+}
+
+void WeakEffect::onTurnEnd() {
+    if (amount > 0)
+        amount--;
+}
+
+//________________________________________FrailEffect_______________________________________
+FrailEffect::FrailEffect(int turns) : StatusEffect("Frail", turns) {}
+
+int FrailEffect::modifyBlock(int baseBlock) {
+    if (amount > 0) 
+        return baseBlock * 0.75; 
+    return baseBlock;
+}
+
+void FrailEffect::onTurnEnd() {
+    if (amount > 0) 
+        amount--; 
+}
+
+//_____________________________________MetallicizeEffect____________________________________
+MetallicizeEffect::MetallicizeEffect(int increaseBlockBy) : StatusEffect("Metallicize", increaseBlockBy) {}
+
+void MetallicizeEffect::onTurnEnd() {
+    //if (amount > 0)
+    //     caster->AddBlock(amount);
+}

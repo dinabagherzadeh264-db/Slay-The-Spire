@@ -41,4 +41,24 @@ public:
     void onTurnEnd() override; 
 };
 
+class WeakEffect : public StatusEffect {
+public:
+    WeakEffect(int turns);
+    int modifyOutgoingDamage(int baseDamage) override;
+    void onTurnEnd() override;
+};
+
+class FrailEffect : public StatusEffect {
+public:
+    FrailEffect(int turns);
+    int modifyBlock(int baseBlock) override;
+    void onTurnEnd() override;
+};
+
+class MetallicizeEffect : public StatusEffect {
+public:
+    MetallicizeEffect(int increaseBlockBy);
+    void onTurnEnd() override;
+};
+
 #endif
